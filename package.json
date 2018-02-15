@@ -1,0 +1,13 @@
+{
+  "name": "sass_start",
+  "version": "1.0.0",
+  "description": "mydescription",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.21.0",
+    "rerun-script": "^0.6.0"
+  }
+}
