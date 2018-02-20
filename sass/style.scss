@@ -1,10 +1,27 @@
-$bg:#000;  
-$text-color:#cacaca;
+$mycolor:blue;
+$para_color:blue;
+$font_size:5rem;
+$bg_color:yellow;
+@mixin flex{
+	display: flex;
+	justify-content:center;
+}
 
 body{
-	background-color:$bg; 
-	color:$text-color;
-}
-h1{
-	color:$text-color;
+	background:$bg_color;
+
+	.my_class{
+
+		h1{
+			color:$mycolor;
+			text-align:center;
+			font-size:$font_size;
+		}
+		
+	}
+	p{
+		@include flex;
+		font-size:$font_size;
+	}
+	
 }

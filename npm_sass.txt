@@ -1,0 +1,61 @@
+Npm scss install possess :-
+
+1.create project folder "css & sass"
+2.create two file "./css/style.css" & "./sass/style.scss"
+3.Do line with css style file index.html
+4.Then start Npm commend port in your project folder.
+5.Then use this comment "npm init"
+6.Then use this comment "browser-sync"
+7.edit package.json with 
+
+===============  
+
+  "scripts": {
+    "start": "gulp"
+  },
+  
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "rerun-script": "^0.6.0"
+  },
+
+===========
+
+8.Then use this comment "npm install gulp"
+9.Create a file in your root folder "gulpfile.js" and pest the code
+
+
+=======================
+
+
+const gulp        = require('gulp');
+const sass        = require('gulp-sass');
+const browserSync = require('browser-sync').create();
+// Compile Sass & Inject Into Browser
+gulp.task('sass', function() {
+    return gulp.src('./sass/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest("./css"))
+        .pipe(browserSync.stream());
+});
+// Watch Sass & Serve
+gulp.task('serve', ['sass'], function() {
+    browserSync.init({
+        server: "."  
+    });
+
+    gulp.watch('./sass/*.scss', ['sass']);
+    gulp.watch("*.html").on('change', browserSync.reload);
+});
+// Default Task
+gulp.task('default', ['serve']);
+
+
+
+====================
+
+See this url more help 
+http://ryanchristiani.com/getting-started-with-gulp-and-sass/
+
+10.Then use this comment "npm start"
+11.After that use your scss file.

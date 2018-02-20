@@ -1,6 +1,10 @@
 body {
-  background-color: #000;
-  color: #cacaca; }
-
-h1 {
-  color: #cacaca; }
+  background: yellow; }
+  body .my_class h1 {
+    color: blue;
+    text-align: center;
+    font-size: 5rem; }
+  body p {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem; }
